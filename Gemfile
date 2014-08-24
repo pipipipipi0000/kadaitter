@@ -11,6 +11,8 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'devise'
 gem 'haml-rails'
+gem 'bootstrap-sass'
+gem 'autoprefixer-rails'
 
 group :development do
   gem 'spring'
