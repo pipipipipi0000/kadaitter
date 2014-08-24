@@ -13,6 +13,7 @@ gem 'devise'
 gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'autoprefixer-rails'
+gem 'kaminari'
 
 group :development do
   gem 'spring'
