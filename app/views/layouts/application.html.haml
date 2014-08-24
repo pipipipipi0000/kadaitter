@@ -6,6 +6,41 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    %p.notice= notice
-    %p.alert= alert
+    %nav.navbar.navbar-default(role="navigation")
+      .container
+        .navbar-header
+          %button.navbar-toggle(type="button" data-toggle="collapse" data-target="#navbar_collapse_target")
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          = link_to "Kadaitter", root_path, class: "navbar-brand"
+        #navbar_collapse_target.collapse.navbar-collapse
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li.dropdown
+                %a.dropdown-toggle(href="#" data-toggle="dropdown")
+                  = current_user.email
+                  %span.caret
+                %ul.dropdown-menu(role="menu")
+                  %li
+                    = link_to "Sign out", destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to "Sign in", new_user_session_path
+              %li
+                = link_to "Sign up", new_user_registration_path
+
+  .container
+    - if notice
+      .alert.alert-info.alert-dismissible(role="alert")
+        %button.close(type="button" data-dismiss="alert")
+          %span(aria-hidden="true") &times;
+          %span.sr-only Close
+        = notice
+    - if alert
+      .alert.alert-warning.alert-dismissible(role="alert")
+        %button.close(type="button" data-dismiss="alert")
+          %span(aria-hidden="true") &times;
+          %span.sr-only Close
+        = alert
     = yield
