@@ -1,9 +1,5 @@
 = paginate @tweets
-
-- @tweets.each do |tweet|
-  .panel.panel-default
-    .panel-heading= tweet.user.email
-    .panel-body= tweet.text
-    .panel-footer= time_ago_in_words(tweet.created_at)
+  
+= render partial: "tweets/list", locals: { tweets: @tweets }
 
 = paginate @tweets
