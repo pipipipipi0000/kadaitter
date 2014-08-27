@@ -1,5 +1,8 @@
-= paginate @tweets
-  
-= render partial: "tweets/list", locals: { tweets: @tweets }
+= render partial: "tweets/form", locals: { tweet: @tweet }
 
+%br
+%br
+
+= paginate @tweets
+= render partial: "tweets/list", locals: { tweets: @tweets }
 = paginate @tweets
