@@ -3,4 +3,6 @@ class Tweet < ActiveRecord::Base
   
   validates :user_id, presence: true
   validates :text, presence: true, length: { maximum: 150 }
+
+  paginates_per 10
 end
