@@ -4,5 +4,7 @@ Rails.application.routes.draw do
   root to: 'home#index'
   get 'home/index'
 
+  get 'welcome', controller: 'home'
+
   resources :tweets, only: %i(create)
 end
