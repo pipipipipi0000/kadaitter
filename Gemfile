@@ -18,4 +18,9 @@ gem 'kaminari'
 group :development do
   gem 'spring'
   gem 'erb2haml'
+  gem 'pry-rails'
+  gem 'pry-byebug'
+  gem 'pry-doc'
+  gem 'pry-stack_explorer'
+  gem 'awesome_print'
 end
