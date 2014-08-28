@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140824130510) do
+ActiveRecord::Schema.define(version: 20140828093931) do
+
+  create_table "followings", force: true do |t|
+    t.integer  "to_id"     null: false
+    t.integer  "from_id"   null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "followings", ["from_id", "to_id"], name: "index_followings_on_from_id_and_to_id", unique: true
 
   create_table "tweets", force: true do |t|
     t.integer  "user_id",                null: false
