@@ -1,5 +1,8 @@
 - tweets.each do |tweet|
   .panel.panel-default
-    .panel-heading= tweet.user.email
-    .panel-body= tweet.text
-    .panel-footer= time_ago_in_words(tweet.created_at)
+    .panel-heading
+      %h4.panel-title
+        = link_to tweet.user.email, user_path(tweet.user.id)
+        %small= "・#{time_ago_in_words(tweet.created_at)}"
+    .panel-body
+      = tweet.text

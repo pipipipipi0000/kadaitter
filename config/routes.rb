@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get 'welcome', controller: 'home'
 
   resources :tweets, only: %i(create)
+  resources :users, only: %i(show)
 end
