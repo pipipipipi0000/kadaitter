@@ -5,4 +5,6 @@ class Tweet < ActiveRecord::Base
   validates :text, presence: true, length: { maximum: 150 }
 
   paginates_per 10
+
+  default_scope {order.("created_ad DESC") }
 end
