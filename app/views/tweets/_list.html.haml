@@ -3,6 +3,6 @@
     .panel-heading
       %h4.panel-title
         = link_to tweet.user.email, user_path(tweet.user.id)
-        %small= "・#{time_ago_in_words(tweet.created_at)}"
+        %small= "tweeted #{time_ago_in_words(tweet.created_at)} ago"
     .panel-body
       = tweet.text
