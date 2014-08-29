@@ -6,9 +6,9 @@
 .row
   .col-md-4
     - if @user.followings.present?
-      = render partial: "users/list", locals: { title: "Followings (#{@user.followings.count})", users: @user.followings }
+      = render partial: "users/list", locals: { title: "Followings (#{@user.followings.size})", users: @user.followings }
     - if @user.followers.present?
-      = render partial: "users/list", locals: { title: "Followers (#{@user.followers.count})", users: @user.followers }
+      = render partial: "users/list", locals: { title: "Followers (#{@user.followers.size})", users: @user.followers }
 
   .col-md-8
     = render partial: "tweets/list", locals: { tweets: @user_tweets }
