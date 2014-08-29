@@ -5,9 +5,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
 
     if @tweet.save
-      redirect_to root_path, notice: "Tweet was successfully created."
+      redirect_to :back, notice: "Tweet was successfully created."
     else
-      redirect_to root_path, alert: @tweet.errors.full_messages.first
+      redirect_to :back, alert: @tweet.errors.full_messages.first
     end
   end
 
