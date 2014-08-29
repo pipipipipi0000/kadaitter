@@ -1,6 +1,8 @@
-- if following.new_record?
-  = form_for following, html: { role: "form" } do |f|
-    =f.hidden_field :to_id, value: to.id
-    =f.submit "Follow", class: "btn btn-primary"
-- else
-  = link_to "Following", following_path(following.id), class: "btn btn-primary active", method: delete, data: { confirm: "Do you unfollow #{to.email}"? }
+- unless current_user == target_user
+  - if following.new_record?
+    = form_for following, html: { role: "form" } do |f|
+      = f.hidden_field :to_id, value: target_user.id
+      = f.submit "Follow", class: "btn btn-primary"
+  - else
+    = link_to "Following", following_path(following.id), class: "btn btn-primary active", method: :delete, data: { confirm: "Do you unfollow #{target_user.email}?" }
+    %br
