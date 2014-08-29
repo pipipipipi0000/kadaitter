@@ -4,5 +4,5 @@
       = f.hidden_field :to_id, value: target_user.id
       = f.submit "Follow", class: "btn btn-primary"
   - else
-    = link_to "Following", following_path(following.id), class: "btn btn-primary active", method: :delete, data: { confirm: "Do you unfollow #{target_user.email}?" }
+    = link_to "Unfollow", following_path(following.id), class: "btn btn-danger", method: :delete
     %br
