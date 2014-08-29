@@ -1,18 +1,7 @@
 .row
   .col-sm-4
     = render partial: "tweets/form", locals: { tweet: @tweet }
-    .panel.panel-default
-      .panel-heading
-        %h4.panel-title New tweet
-      .panel-body
-        = render partial: "tweets/form", locals: { tweet: @tweet }
-    .panel.panel-default
-      .panel-heading
-        %h4.panel-title Active users
-      %ul.list-group
-        - @active_users.each do |active_user|
-          %li.list-group-item
-            = link_to active_user.email, user_path(active_user.id)
+    = render partial: "users/list", locals: { title: "Active users", users: @active_users }
   .col-sm-8
     = render partial: "tweets/list", locals: { tweets: @tweets }
     = paginate @tweets
