@@ -1,5 +1,9 @@
-= form_for tweet, html: { role: "form" } do |f|
-  .form-group
-    = f.label :text, "New tweet", class: "sr-only"
-    = f.text_field :text, class: "form-control"
-  = f.submit "Tweet", class: "btn btn-primary"
+.panel.panel-default
+  .panel-heading
+    %h4.panel-title New tweet
+  .panel-body
+    = form_for tweet, html: { role: "form" } do |f|
+      .form-group
+        = f.label :text, "New tweet", class: "sr-only"
+        = f.text_field :text, class: "form-control"
+      = f.submit "Tweet", class: "btn btn-primary"

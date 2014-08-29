@@ -1,5 +1,6 @@
 .row
   .col-sm-4
+    = render partial: "tweets/form", locals: { tweet: @tweet }
     .panel.panel-default
       .panel-heading
         %h4.panel-title New tweet
