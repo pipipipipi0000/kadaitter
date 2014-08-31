@@ -10,5 +10,5 @@ class User < ActiveRecord::Base
   has_many :followed_from, class_name: "Following", foreign_key: "to_id", dependent: :destroy
   has_many :followers, through: :followed_from, source: :from
 
-  scope :active, -> { Tweet.includes(:user).limit(100).map(&:user).uniq }
+  scope :active, -> { Tweet.includes(:user).limit(20).map(&:user).uniq }
 end
