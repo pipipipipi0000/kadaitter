@@ -6,6 +6,7 @@ Rails.application.routes.draw do
 
   get 'welcome', controller: 'home'
 
-  resources :tweets, only: %i(create)
-  resources :users, only: %i(show)
+  resources :tweets,     only: %i(create)
+  resources :users,      only: %i(show)
+  resources :followings, only: %i(create destroy)
 end
