@@ -1,9 +1,15 @@
 %h2= @user.email
 
 = render partial: "followings/button", locals: { following: @following, target_user: @user }
-
-%br
 %br
 
-= render partial: "tweets/list", locals: { tweets: @user_tweets }
-= paginate @user_tweets
+.row
+  .col-md-4
+    - if @user.followings.present?
+      = render partial: "users/list", locals: { title: "Followings (#{@user.followings.count})", users: @user.followings }
+    - if @user.followers.present?
+      = render partial: "users/list", locals: { title: "Followers (#{@user.followers.count})", users: @user.followers }
+
+  .col-md-8
+    = render partial: "tweets/list", locals: { tweets: @user_tweets }
+    = paginate @user_tweets

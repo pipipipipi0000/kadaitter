@@ -1,7 +1,7 @@
 .row
-  .col-sm-4
+  .col-md-4
     = render partial: "tweets/form", locals: { tweet: @tweet }
     = render partial: "users/list", locals: { title: "Active users", users: @active_users }
-  .col-sm-8
+  .col-md-8
     = render partial: "tweets/list", locals: { tweets: @tweets }
     = paginate @tweets
